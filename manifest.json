@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "x-gif-dl",
+  "version": "1.0",
+  "description": "Downloads the gif from X (Twitter) videos",
+  
+  "permissions": ["activeTab", "<all_urls>"],
+  
+  "browser_action": {
+    "default_title": "x-gif-dl",
+    "default_popup": "popup/index.html"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["*://*.x.com/*", "*://*.twitter.com/*"],
+      "js": ["content_scripts/generate.js"]
+    }
+  ]
+}

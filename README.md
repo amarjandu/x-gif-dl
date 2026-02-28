@@ -10,3 +10,14 @@ Because under the hood twitter/x serves gifs as video files, we download the vid
 <img src="about.png" alt="about" width=300>
 
 Click `Generate Gif` and enjoy!
+
+### Installation
+
+Run:
+
+```bash
+git clone https://github.com/amarjandu/x-gif-dl.git
+cd x-gif-dl
+npm install
+npm run build -- --brower={target}
+```

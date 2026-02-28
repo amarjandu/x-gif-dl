@@ -344,8 +344,12 @@ document.addEventListener("click", (e) => {
   }
 
   if (e.target.id === "settings-back-btn") {
-    saveSettings();
     document.querySelector("#settings-content").classList.add("hidden");
     document.querySelector("#popup-content").classList.remove("hidden");
   }
+});
+
+// Save settings immediately on any change
+document.querySelector("#settings-content").addEventListener("change", () => {
+  saveSettings();
 });

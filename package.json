@@ -4,7 +4,8 @@
     "build:ff": "extension build browser=firefox",
     "clean": "rm -r dist",
     "dev": "extension dev",
-    "preview": "extension preview"
+    "preview": "extension preview",
+    "pp": "prettier . --write"
   },
   "devDependencies": {
     "extension": "^3.8.7",

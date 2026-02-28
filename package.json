@@ -1,5 +1,20 @@
 {
+  "scripts": {
+    "build": "extension build",
+    "build:ff": "extension build browser=firefox",
+    "clean": "rm -r dist",
+    "dev": "extension dev",
+    "preview": "extension preview"
+  },
   "devDependencies": {
-    "extension": "^3.8.7"
+    "extension": "^3.8.7",
+    "prettier": "3.8.1",
+    "typescript": "5.1.6"
+  },
+  "type": "module",
+  "dependencies": {
+    "@ffmpeg/core": "^0.12.6",
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2"
   }
 }

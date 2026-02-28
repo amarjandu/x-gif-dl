@@ -1,16 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div id="popup-content">
-        <button id="generate-btn" type="button">Generate GIF</button>
+      <button id="generate-btn" type="button">Generate GIF</button>
+      <button id="settings-btn" type="button">Settings</button>
+    </div>
+
+    <div id="settings-content" class="hidden">
+      <h3>Settings</h3>
+
+      <label>
+        <span>Output format</span>
+        <select id="setting-format">
+          <option value="gif" selected>GIF</option>
+          <option value="webp">WebP</option>
+          <option value="apng">APNG</option>
+        </select>
+      </label>
+
+      <label>
+        <span>Max colors</span>
+        <select id="setting-colors">
+          <option value="256" selected>256 (best)</option>
+          <option value="128">128</option>
+          <option value="64">64</option>
+          <option value="32">32</option>
+        </select>
+      </label>
+
+      <label>
+        <span>Dithering</span>
+        <select id="setting-dither">
+          <option value="sierra2_4a" selected>Sierra 2-4A (balanced)</option>
+          <option value="floyd_steinberg">Floyd-Steinberg (best)</option>
+          <option value="bayer">Bayer (ordered)</option>
+          <option value="none">None (fastest)</option>
+        </select>
+      </label>
+
+      <label>
+        <span>Palette mode</span>
+        <select id="setting-stats-mode">
+          <option value="full" selected>Full (global palette)</option>
+          <option value="diff">Diff (motion optimized)</option>
+          <option value="single">Single (per-frame, best)</option>
+        </select>
+      </label>
+
+      <label>
+        <span>FPS</span>
+        <select id="setting-fps">
+          <option value="auto" selected>Match source</option>
+          <option value="30">30</option>
+          <option value="24">24</option>
+          <option value="15">15</option>
+          <option value="10">10</option>
+        </select>
+      </label>
+
+      <label>
+        <span>Resolution</span>
+        <select id="setting-scale">
+          <option value="1" selected>Original</option>
+          <option value="0.75">75%</option>
+          <option value="0.5">50%</option>
+          <option value="0.25">25%</option>
+        </select>
+      </label>
+
+      <label class="toggle-label">
+        <span>Auto-download</span>
+        <input type="checkbox" id="setting-auto-download" checked />
+      </label>
+
+      <div class="settings-actions">
+        <button id="settings-back-btn" type="button">Back</button>
+      </div>
+    </div>
+
+    <div id="status-content" class="hidden">
+      <p id="status-text">Initializing...</p>
+    </div>
+    <div id="download-content" class="hidden">
+      <a id="download-link" download="video.gif">Download GIF</a>
     </div>
     <div id="error-content" class="hidden">
-        <p>Error attempting to create gif</p>
+      <p>Error attempting to create gif</p>
     </div>
+    <video id="video-player" style="display: none"></video>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
